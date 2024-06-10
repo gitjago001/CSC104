@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Calculator</title>
+  <style>
+    .calculator {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .calculator input, .calculator select, .calculator button {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Currency Calculator</h1>
+  <div class="calculator">
+    <input type="number" id="amount" placeholder="Enter amount" required>
+    <select id="from-currency">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="JPY">JPY</option>
+      <option value="CAD">CAD</option>
+    </select>
+    <select id="to-currency">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="JPY">JPY</option>
+      <option value="CAD">CAD</option>
+    </select>
+    <button onclick="convertCurrency()">Convert</button>
+    <input type="text" id="result" placeholder="Result" readonly>
+  </div>
+
+  <script>
+    // Exchange rates based on August 2023 data
+    var exchangeRates = {
+      "USD": 1,
+      "EUR": 0.91,
+      "GBP": 0.78,
+      "JPY": 145.95,
